@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Income vs. wealth: New York City's two-tier gap</title>
+<meta name="description" content="The racial income gap in New York City is large; the racial wealth gap is categorically larger.">
+<link rel="stylesheet" href="https://use.typekit.net/qqk2vto.css">
+<style>
+:root{
+  --vc-black:#050507;--vc-white:#ffffff;--vc-cloud:#dddddd;
+  --vc-orange:#ff7c53;--vc-magenta:#e7466d;--vc-cerulean:#217ebe;--vc-indigo:#394882;
+  --vc-charcoal:#707175;--vc-cloud-50:#eeeeee;--vc-paper:#f7f7f4;
+  --vc-sans:"halyard-text","Inter","Helvetica Neue",Arial,sans-serif;
+  --vc-serif:"GascogneTS","Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@font-face{font-family:'GascogneTS';src:url('https://vital-city-nyc.github.io/vital-city-design-system/fonts/GascogneTS-Light.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:var(--vc-white);color:var(--vc-black);}
+body{font-family:var(--vc-sans);font-weight:300;line-height:1.5;padding:24px 16px;display:flex;justify-content:center;}
+.card{width:100%;max-width:880px;background:var(--vc-white);border:1px solid var(--vc-black);overflow:hidden;}
+body.embed{padding:0;}
+body.embed .card{border:none;max-width:none;}
+.head{padding:22px 24px 20px;border-bottom:1px solid var(--vc-cloud);}
+.kicker{font-weight:700;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:8px;}
+.head h1{font-weight:700;font-size:1.7rem;line-height:1.15;letter-spacing:-.005em;margin-bottom:8px;}
+.head .dek{font-size:.92rem;max-width:62ch;}
+.head .dek b{font-weight:700;}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--vc-cloud);}
+.panel{padding:22px 24px;border-right:1px solid var(--vc-cloud);}
+.panel:last-child{border-right:none;}
+.panel h2{font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:4px;}
+.panel .panel-sub{font-size:.74rem;color:var(--vc-charcoal);margin-bottom:18px;}
+
+.rowset{display:flex;flex-direction:column;gap:14px;}
+.row{display:grid;grid-template-columns:64px 1fr 110px;align-items:center;gap:10px;}
+.row-label{font-size:.85rem;font-weight:700;}
+.row-track{position:relative;height:26px;background:var(--vc-cloud-50);}
+.row-fill{position:absolute;left:0;top:0;height:100%;}
+.row-fill.white{background:var(--vc-indigo);}
+.row-fill.black{background:var(--vc-magenta);}
+.row-fill.latino{background:var(--vc-orange);}
+.row-val{font-family:var(--vc-serif);font-weight:300;font-size:1.15rem;text-align:right;}
+.zero-flag{font-family:var(--vc-sans);font-weight:700;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--vc-charcoal);padding-left:2px;}
+
+.section{padding:22px 24px;border-bottom:1px solid var(--vc-cloud);}
+.section-title{font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:4px;}
+.section-sub{font-size:.74rem;color:var(--vc-charcoal);margin-bottom:18px;}
+
+.foot{padding:18px 24px 22px;background:var(--vc-paper);}
+.foot h3{font-weight:700;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vc-charcoal);margin-bottom:8px;}
+.foot p{font-size:.78rem;line-height:1.55;color:var(--vc-charcoal);max-width:72ch;margin-bottom:6px;}
+
+@media (max-width:640px){
+  .grid{grid-template-columns:1fr;}
+  .panel{border-right:none;border-bottom:1px solid var(--vc-cloud);}
+  .panel:last-child{border-bottom:none;}
+  .head h1{font-size:1.35rem;}
+}
+</style>
+<script>
+if (new URLSearchParams(location.search).get('embed') === '1') {
+  document.addEventListener('DOMContentLoaded',()=>document.body.classList.add('embed'));
+  const postHeight = () => {
+    const h = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    parent.postMessage({ type: 'vc-embed-height', id: 'nyc-income-vs-wealth', height: h }, '*');
+  };
+  window.addEventListener('load', postHeight);
+  window.addEventListener('resize', postHeight);
+  let n = 0;
+  const t = setInterval(() => { postHeight(); if (++n > 20) clearInterval(t); }, 300);
+}
+</script>
+</head>
+<body>
+<main class="card">
+
+  <header class="head">
+    <div class="kicker">Race, income, and wealth in New York City</div>
+    <h1>Income vs. wealth: a two-tier gap</h1>
+    <p class="dek">A white household in New York City earns roughly <b>1.8 times</b> what a Black household earns. The same white household holds more than <b>100 times</b> the wealth of a Black household — and Latino households, on average, hold none at all.</p>
+  </header>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>Median household income</h2>
+      <div class="panel-sub">New York City, 2023</div>
+      <div class="rowset">
+        <div class="row">
+          <div class="row-label">White</div>
+          <div class="row-track"><div class="row-fill white" style="width:100%"></div></div>
+          <div class="row-val">$108,000</div>
+        </div>
+        <div class="row">
+          <div class="row-label">Black</div>
+          <div class="row-track"><div class="row-fill black" style="width:56%"></div></div>
+          <div class="row-val">$60,000</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Median household wealth</h2>
+      <div class="panel-sub">New York City, most recent estimates</div>
+      <div class="rowset">
+        <div class="row">
+          <div class="row-label">White</div>
+          <div class="row-track"><div class="row-fill white" style="width:100%"></div></div>
+          <div class="row-val">$320,000</div>
+        </div>
+        <div class="row">
+          <div class="row-label">Black</div>
+          <div class="row-track"><div class="row-fill black" style="width:0.9%"></div></div>
+          <div class="row-val">$2,800</div>
+        </div>
+        <div class="row">
+          <div class="row-label">Latino</div>
+          <div class="row-track"><div class="row-fill latino" style="width:0%"></div><span class="zero-flag" style="position:absolute;left:6px;top:50%;transform:translateY(-50%);">~$0</span></div>
+          <div class="row-val">~$0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-title">Homeownership rate</div>
+    <div class="section-sub">Share of households who own their home, New York City</div>
+    <div class="rowset">
+      <div class="row">
+        <div class="row-label">White</div>
+        <div class="row-track"><div class="row-fill white" style="width:48%"></div></div>
+        <div class="row-val">~48%</div>
+      </div>
+      <div class="row">
+        <div class="row-label">Black</div>
+        <div class="row-track"><div class="row-fill black" style="width:25%"></div></div>
+        <div class="row-val">~25%</div>
+      </div>
+      <div class="row">
+        <div class="row-label">Latino</div>
+        <div class="row-track"><div class="row-fill latino" style="width:19%"></div></div>
+        <div class="row-val">&lt;20%</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <h3>Methodology</h3>
+    <p><b>Source:</b> Pascale Mevs Fitzgerald for Vital City. Income figures: U.S. Census Bureau American Community Survey, 2023 one-year estimates, median household income for non-Hispanic white and non-Hispanic Black households in New York City. Wealth figures: New School Institute on Race, Power and Political Economy / Federal Reserve Bank of Boston "Color of Wealth" research applied to New York City, citing median household net worth by race and ethnicity. Homeownership rates: American Community Survey, latest one-year estimates, owner-occupied housing tenure by householder race/ethnicity.</p>
+    <p><b>How to read this:</b> Income is what a household earns in a year. Wealth is what a household owns (home equity, savings, investments) minus what it owes (mortgages, student loans, credit-card debt). Latino median wealth is reported as effectively zero in the cited research — when debts roughly equal assets — and is shown here as a "no bar" indicator rather than a literal $0 point estimate.</p>
+    <p><b>Limitations:</b> Wealth medians are highly sensitive to sample size and methodology; figures pool across age, immigration status, and household composition. Income data are from a single year; wealth and homeownership shift more slowly.</p>
+  </footer>
+
+</main>
+</body>
+</html>
